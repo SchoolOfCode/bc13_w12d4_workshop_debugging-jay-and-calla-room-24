@@ -6,7 +6,7 @@ export const getAllItems = () => {
 
 export const addItem = (objBody) => {
   users.unshift(objBody);
-  return [];
+  return users[0];
 };
 
 
