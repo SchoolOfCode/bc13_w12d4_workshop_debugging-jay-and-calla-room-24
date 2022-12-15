@@ -23,7 +23,7 @@ export default function App() {
       id: uuidv4(),
       content: task,
     };
-    const response = await fetch("http://localhost:3001/uses", {
+    const response = await fetch("http://localhost:3001/users", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -31,9 +31,10 @@ export default function App() {
       body: JSON.stringify(todo) 
     });
     const data = await response.json()
-    settodoList(data);
+    const newTodoList = [...todoList, data]
+    settodoList(newTodoList);
   };
-
+  
   return (
     <div className="App">
       <h1>TodoList with bugs!</h1>
